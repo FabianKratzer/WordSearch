@@ -1,0 +1,57 @@
+﻿<Window x:Class="WordSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordSearch"
+        mc:Ignorable="d"
+        Title="WordSearch" 
+        MinHeight="500" 
+        Height="500"
+        MinWidth="500"
+        Width="500">
+
+    <Grid>
+        <Separator Height="265" Margin="0" VerticalAlignment="Top" />
+
+        <Separator Height="105" Margin="0" VerticalAlignment="Top" />
+
+        <!--LABELS-->
+        <Label x:Name="label_path" Content="Select Directory: " HorizontalAlignment="Left" Height="30" Margin="10,15,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label x:Name="label_search" Content="Search Query:" HorizontalAlignment="Left" Height="30" Margin="10,61,0,0" VerticalAlignment="Top" Width="89"/>
+        <!--TEXTBOXES-->
+        <TextBox x:Name="textBox_path" Height="20" Margin="114,20,110,0" TextWrapping="NoWrap" AcceptsReturn="False" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="button_browse"  Content="Browse" Height="27" Margin="0,18,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81" Click="button_browse_Click" />
+        <!--BUTTONS-->
+
+        <TextBox x:Name="textBox_search" Height="60" Margin="114,64,110,0" TextWrapping="NoWrap" AcceptsReturn="False" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="button_filter" Content="Filter" Height="27" Margin="0,97,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81" Click="button_filter_Click" />
+        <Button x:Name="button_reset" Content="Reset" Height="27" Margin="0,64,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81" Click="button_reset_Click" />
+
+        <!-- LISTVIEW with GridView -->
+
+        <ListView Margin="10,170,10,80" Name="listView1" SelectionMode="Multiple" SelectionChanged="listView1_SelectionChanged">
+            <ListView.View>
+                <GridView/>
+            </ListView.View>
+        </ListView>
+
+        <!--STATUSBAR-->
+        <StatusBar Height="30" VerticalAlignment="Bottom">
+            <StatusBar.RenderTransform>
+                <TransformGroup>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StatusBar.RenderTransform>
+            <Label x:Name="label_status" Height="27"  Content="  State  |  "/>
+            <Label x:Name="lb_status" Height="27"  Content="Ready! "/>
+        </StatusBar>
+        <Button x:Name="button_save" Content="SAVE Result" Margin="0,0,10,41" HorizontalAlignment="Right" Width="81" Height="27" VerticalAlignment="Bottom"/>
+        <Label x:Name="label_result_lbl" Content="Results:" HorizontalAlignment="Left" Height="30" Margin="10,135,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label x:Name="label_results" Content="" Height="30" Margin="94,135,10,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_save_Copy" Content="SAVE shown DOCX as TXT" Margin="0,0,110,41" HorizontalAlignment="Right" Width="158" Height="27" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>
